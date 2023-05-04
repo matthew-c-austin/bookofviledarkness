@@ -14,7 +14,7 @@ public class Post {
     Date date;
 
     @ManyToOne
-    @JoinColumn(name = "appUser_id")
+    @JoinColumn(name = "siteUser_id")
     SiteUser siteUser;
 
     Post() {

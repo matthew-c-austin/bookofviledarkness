@@ -10,7 +10,7 @@ public class SiteUser {
     long id;
     String username;
     String password;
-    @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "siteUser", cascade = CascadeType.ALL)
     List<Post> postList;
 
     public SiteUser() {
