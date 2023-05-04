@@ -1,11 +1,10 @@
 package com.bookofviledarkness.models;
 
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
-public class AppUser {
+public class SiteUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
@@ -14,11 +13,11 @@ public class AppUser {
     @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
     List<Post> postList;
 
-    public AppUser() {
+    public SiteUser() {
         // empty
     }
 
-    public AppUser(String username, String password) {
+    public SiteUser(String username, String password) {
         this.username = username;
         this.password = password;
     }
@@ -43,7 +42,22 @@ public class AppUser {
         this.password = password;
     }
 
+    public void addPost(Post post) {
+        post.setSiteUser(this);
+        postList.add(post);
+    }
+
     public List<Post> getPostList() {
         return postList;
+    }
+
+    @Override
+    public String toString() {
+        return "SiteUser{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", postList=" + postList +
+                '}';
     }
 }

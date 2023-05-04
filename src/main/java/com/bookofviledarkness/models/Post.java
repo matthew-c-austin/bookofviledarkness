@@ -11,19 +11,18 @@ public class Post {
     long id;
     @Column(columnDefinition = "text")
     String postContent;
-    String subject;
     Date date;
 
     @ManyToOne
-    AppUser appUser;
+    @JoinColumn(name = "appUser_id")
+    SiteUser siteUser;
 
     Post() {
         //empty
     }
 
-    public Post(String postContent, String subject, Date date) {
+    public Post(String postContent, Date date) {
         this.postContent = postContent;
-        this.subject = subject;
         this.date = date;
     }
 
@@ -39,14 +38,6 @@ public class Post {
         this.postContent = postContent;
     }
 
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
     public Date getDate() {
         return date;
     }
@@ -55,11 +46,11 @@ public class Post {
         this.date = date;
     }
 
-    public AppUser getAppUser() {
-        return appUser;
+    public SiteUser getAppUser() {
+        return siteUser;
     }
 
-    public void setAppUser(AppUser appUser) {
-        this.appUser = appUser;
+    public void setSiteUser(SiteUser siteUser) {
+        this.siteUser = siteUser;
     }
 }
