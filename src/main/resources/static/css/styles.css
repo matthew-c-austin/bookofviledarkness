@@ -5,6 +5,11 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,26 +26,22 @@ a:hover {
 }
 
 /* Splash page styles */
+.splash-container {
+    text-align: center;
+}
+
 .splash-heading {
     font-size: 36px;
     font-weight: bold;
-    text-align: center;
     margin-top: 50px;
 }
 
 .splash-description {
     font-size: 24px;
-    text-align: center;
     margin-top: 30px;
 }
 
 .splash-button {
-    display: block;
-    margin: 50px auto 0;
-    text-align: center;
-}
-
-.splash-button a {
     display: inline-block;
     background-color: #d4af37;
     color: #202020;
@@ -49,22 +50,26 @@ a:hover {
     padding: 15px 30px;
     border-radius: 5px;
     transition: background-color 0.2s;
+    margin: 20px;
 }
 
-.splash-button a:hover {
+.splash-button:hover {
     background-color: #ffd700;
+    cursor: pointer;
 }
 
 /* Forbidden Secrets styles */
 .forbidden-secrets-title {
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
   font-size: 36px;
+  color: #d4af37;
 }
 
 .forbidden-secrets-post {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
+    border: 2px solid #d4af37;
+    border-radius: 5px;
+    padding: 20px;
 }
 
 .forbidden-secrets-subject {
@@ -75,17 +80,25 @@ a:hover {
   color: #ff6600;
 }
 
+.forbidden-secrets-post-username {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #d4af37;
+}
+
 .forbidden-secrets-date {
   margin-top: 0;
   margin-bottom: 15px;
   font-size: 14px;
-  color: #666666;
+  color: #c2c2c2;
 }
 
 .forbidden-secrets-postcontent-container {
   font-size: 18px;
   line-height: 1.5;
-  color: #ffffff;
+  color: #c2c2c2;
 }
 
 .forbidden-secrets-form {
@@ -98,18 +111,68 @@ a:hover {
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: bold;
-  color: #ff6600;
+  color: #d4af37;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .forbidden-secrets-button {
-  background-color: #222222;
-  border: 2px solid #ff6600;
-  color: #ff6600;
-  transition: all 0.3s ease-in-out;
+    display: inline-block;
+    background-color: #d4af37;
+    color: #202020;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    margin: 20px;
 }
 
 .forbidden-secrets-button:hover {
-  background-color: #ff6600;
+    background-color: #ffd700;
+    cursor: pointer;
+}
+
+/* Modal styles */
+.forbidden-secrets-popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.forbidden-secrets-popup-content {
+    background-color: #202020;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+}
+
+.modal-buttons {
+  text-align: center;
+}
+
+.modal-button {
+  background-color: #222222;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-button:hover {
+  background-color: #d4af37;
   color: #222222;
   cursor: pointer;
 }

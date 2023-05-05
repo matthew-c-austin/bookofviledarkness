@@ -46,7 +46,7 @@ public class Post {
         this.date = date;
     }
 
-    public SiteUser getAppUser() {
+    public SiteUser getSiteUser() {
         return siteUser;
     }
 
