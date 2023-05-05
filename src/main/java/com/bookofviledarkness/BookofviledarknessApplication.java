@@ -1,4 +1,4 @@
-package com.example.bookofviledarkness;
+package com.bookofviledarkness;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
